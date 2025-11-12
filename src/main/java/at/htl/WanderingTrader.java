@@ -3,9 +3,9 @@ package at.htl;
 public class WanderingTrader extends Player {
     private Player _oldStuffed;
 
-    WanderingTrader(int playerCount) {
+    WanderingTrader(int playerCount, String name) {
         _oldStuffed = null;
 
-        super(playerCount);
+        super(playerCount, name);
     }
 }
