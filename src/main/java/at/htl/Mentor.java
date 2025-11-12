@@ -1,10 +1,11 @@
 package at.htl;
 
 public class Mentor extends Player{
-    private Player _oldProt;
+    private Player _prot;
 
     Mentor(int playerCount) {
-        _oldProt = null;
+
+        _prot = null;
         super(playerCount);
     }
 }

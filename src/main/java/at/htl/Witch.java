@@ -6,11 +6,11 @@ public class Witch extends Player {
     private int _gonePotions;
     private int _onionPotions;
 
-    Witch(int healthPotions, int damagePotions, int gonePotions, int onionPotions, int playerCount) {
-        this._healthPotions = healthPotions;
-        this._damagePotions = damagePotions;
-        this._gonePotions = gonePotions;
-        this._onionPotions = onionPotions;
+    Witch(int playerCount) {
+        _healthPotions = 2;
+        _damagePotions = 1;
+        _gonePotions = 1;
+        _onionPotions = 0;
 
         super(playerCount);
     }
