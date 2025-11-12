@@ -8,4 +8,8 @@ public class Mentor extends Player{
         _prot = null;
         super(playerCount, name);
     }
+
+    public Player getProt() {
+        return _prot;
+    }
 }

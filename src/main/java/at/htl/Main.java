@@ -9,19 +9,20 @@ public class Main {
         boolean gamefinished = false;
         int index = 0;
 
-        Player Sepp1 = new Witch(playerCount, "Sebastian");
-        Player Sepp2 = new Werewolf(playerCount, "Herbert");
-        Player Sepp3 = new Mentor(playerCount, "Sylvio");
-        Player Sepp4 = new SleeperChild(playerCount, "Silas");
-        Player Sepp5 = new WanderingTrader(playerCount, "Attila");
+
+        WanderingTrader wanderingTrader = new WanderingTrader(playerCount, "Attila");
+        Mentor mentor = new Mentor(playerCount, "Sylvio");
+        Werewolf werewolf = new Werewolf(playerCount, "Herbert", mentor, wanderingTrader);
+        Witch witch = new Witch(playerCount, "Sebastian", werewolf);
+        SleeperChild sleeperChild = new SleeperChild(playerCount, "Silas", werewolf);
 
         List<Player> game = new ArrayList<Player>();
 
-        game.add(Sepp3);
-        game.add(Sepp2);
-        game.add(Sepp4);
-        game.add(Sepp5);
-        game.add(Sepp1);
+        game.add(mentor);
+        game.add(werewolf);
+        game.add(wanderingTrader);
+        game.add(sleeperChild);
+        game.add(witch);
 
         while(!gamefinished) {
 
