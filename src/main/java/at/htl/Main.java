@@ -24,21 +24,17 @@ public class Main {
         IO.println(sleeperChild.toString());
         IO.println(wanderingTrader.toString());
         IO.println(witch.toString());
+        IO.println();
 
-        witch.damage(wanderingTrader);
-        IO.println(witch.getPotions());
+        werewolf.attack(sleeperChild);
 
-        witch.heal(sleeperChild);
-        witch.heal(witch);
-        witch.heal(witch);
-        IO.println(witch.getPotions());
-
-        IO.println(mentor.toString());
-        IO.println(werewolf.toString());
         IO.println(sleeperChild.toString());
-        IO.println(wanderingTrader.toString());
-        IO.println(witch.toString());
-
+        sleeperChild.updateMutation();
+        IO.println(sleeperChild.toString());
+        IO.println(sleeperChild.getMayMutate());
+        witch.heal(sleeperChild);
+        IO.println(sleeperChild.toString());
+        IO.println(sleeperChild.getMayMutate());
 
 
     }
