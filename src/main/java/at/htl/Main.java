@@ -12,9 +12,14 @@ public class Main {
 
         WanderingTrader wanderingTrader = new WanderingTrader(playerCount, "Attila");
         Mentor mentor = new Mentor(playerCount, "Sylvio");
-        Werewolf werewolf = new Werewolf(playerCount, "Herbert", mentor, wanderingTrader);
-        Witch witch = new Witch(playerCount, "Sebastian", werewolf);
-        SleeperChild sleeperChild = new SleeperChild(playerCount, "Silas", werewolf);
+        Werewolf werewolf = new Werewolf(playerCount, "Herbert");
+        Witch witch = new Witch(playerCount, "Sebastian");
+        SleeperChild sleeperChild = new SleeperChild(playerCount, "Silas");
+
+        werewolf.initializeOtherPlayers(mentor, wanderingTrader);
+        wanderingTrader.initializeOtherPlayers(werewolf);
+        sleeperChild.initializeOtherPlayers(werewolf);
+        witch.initializeOtherPlayers(werewolf);
 
         List<Player> game = new ArrayList<Player>();
 

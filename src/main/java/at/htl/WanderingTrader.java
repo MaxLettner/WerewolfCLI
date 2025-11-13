@@ -7,11 +7,17 @@ public class WanderingTrader extends Player {
     private Player _stuffed;
     private Player _sleptWith;
 
+    private Werewolf _werewolf;
+
     WanderingTrader(int playerCount, String name) {
         _stuffed = null;
         _sleptWith = null;
 
         super(playerCount, name);
+    }
+
+    public void initializeOtherPlayers(Werewolf werewolf) {
+        _werewolf = werewolf;
     }
 
     public void stuff(Player player) {

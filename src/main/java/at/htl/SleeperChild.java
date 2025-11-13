@@ -5,11 +5,15 @@ public class SleeperChild extends Player {
     private boolean _mayMutate;
     private Werewolf _werewolf;
 
-    SleeperChild(int playerCount, String name, Werewolf werewolf) {
+    SleeperChild(int playerCount, String name) {
         _isMutated = false;
-        _werewolf = werewolf;
+        _mayMutate = false;
 
         super(playerCount, name);
+    }
+
+    public void initializeOtherPlayers(Werewolf werewolf) {
+        _werewolf = werewolf;
     }
 
     public boolean checkIfWerewolf(Player player) {

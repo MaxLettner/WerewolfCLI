@@ -8,11 +8,14 @@ public class Werewolf extends Player {
     private WanderingTrader _wanderingTrader;
     private Player _victim;
 
-    Werewolf(int playerCount, String name, Mentor mentor,  WanderingTrader wanderingTrader) {
-        _mentor = mentor;
-        _wanderingTrader = wanderingTrader;
+    Werewolf(int playerCount, String name) {
 
         super(playerCount, name);
+    }
+
+    public void initializeOtherPlayers(Mentor mentor,  WanderingTrader wanderingTrader)  {
+        _mentor = mentor;
+        _wanderingTrader = wanderingTrader;
     }
 
     public void attack(Player player) {

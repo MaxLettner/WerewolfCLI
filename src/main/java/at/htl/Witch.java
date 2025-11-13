@@ -8,14 +8,16 @@ public class Witch extends Player {
 
     private Werewolf _werewolf;
 
-    Witch(int playerCount, String name, Werewolf werewolf) {
+    Witch(int playerCount, String name) {
         _healthPotions = 2;
         _damagePotions = 1;
         _gonePotions = 1;
         _onionPotions = 0;
 
-        _werewolf = werewolf;
-
         super(playerCount,  name);
+    }
+
+    public void initializeOtherPlayers(Werewolf werewolf) {
+        _werewolf = werewolf;
     }
 }
