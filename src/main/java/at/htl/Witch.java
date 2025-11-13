@@ -13,6 +13,7 @@ public class Witch extends Player {
     private Werewolf _werewolf;
     private WanderingTrader _wanderingTrader;
     private Mentor _mentor;
+    private SleeperChild _sleeperChild;
 
     Witch(int playerCount, String name) {
         _healthPotions = 2;
@@ -23,10 +24,11 @@ public class Witch extends Player {
         super(playerCount,  name);
     }
 
-    public void initializeOtherPlayers(Werewolf werewolf, WanderingTrader wanderingTrader, Mentor mentor) {
+    public void initializeOtherPlayers(Werewolf werewolf, WanderingTrader wanderingTrader, Mentor mentor, SleeperChild sleeperChild) {
         _werewolf = werewolf;
         _wanderingTrader = wanderingTrader;
         _mentor = mentor;
+        _sleeperChild = sleeperChild;
     }
 
     public String getPotions() {
@@ -43,7 +45,7 @@ public class Witch extends Player {
         }
     }
 
-    public void throwDamagePotion(Player player) {
+    public void damage(Player player) {
         if(_damagePotions < 1) {
             throw new OutOfAmmoException("You have no more damage potions!");
         }
@@ -57,5 +59,16 @@ public class Witch extends Player {
             player.setHealth(player.getHealth() - 1);
         }
         _damagePotions--;
+    }
+
+    public void heal(Player player) {
+        if(_healthPotions < 1) {
+            throw new OutOfAmmoException("You have no more heal potions!");
+        }
+        if(!player._isAlive) {
+            throw new TargetDeadException("Das Opfer ist tot!");
+        }
+        player.setHealth(player.getHealth() + 1);
+        _healthPotions--;
     }
 }

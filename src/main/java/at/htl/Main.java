@@ -1,8 +1,5 @@
 package at.htl;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     static void main() {
         int playerCount = 5;
@@ -19,7 +16,7 @@ public class Main {
         werewolf.initializeOtherPlayers(mentor, wanderingTrader);
         wanderingTrader.initializeOtherPlayers(werewolf);
         sleeperChild.initializeOtherPlayers(werewolf);
-        witch.initializeOtherPlayers(werewolf);
+        witch.initializeOtherPlayers(werewolf, wanderingTrader, mentor, sleeperChild);
 
 
         IO.println(mentor.toString());
@@ -28,7 +25,19 @@ public class Main {
         IO.println(wanderingTrader.toString());
         IO.println(witch.toString());
 
+        witch.damage(wanderingTrader);
         IO.println(witch.getPotions());
+
+        witch.heal(sleeperChild);
+        witch.heal(witch);
+        witch.heal(witch);
+        IO.println(witch.getPotions());
+
+        IO.println(mentor.toString());
+        IO.println(werewolf.toString());
+        IO.println(sleeperChild.toString());
+        IO.println(wanderingTrader.toString());
+        IO.println(witch.toString());
 
 
 
