@@ -20,7 +20,7 @@ public class SleeperChild extends Player {
         return _werewolf == player;
     }
 
-    public void updateMutate() {
+    public void updateMutation() {
         if(_werewolf.getVictim() == this) {
             _health++;
             _werewolf.clearVictim();
