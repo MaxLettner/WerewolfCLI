@@ -28,15 +28,7 @@ public class Main {
         IO.println(wanderingTrader.toString());
         IO.println(witch.toString());
 
-        //mentor.protect(mentor);
-        //IO.println(mentor.getProt().toString());
-        werewolf.attack(wanderingTrader);
-
-        IO.println(mentor.toString());
-        IO.println(werewolf.toString());
-        IO.println(sleeperChild.toString());
-        IO.println(wanderingTrader.toString());
-        IO.println(witch.toString());
+        IO.println(witch.getPotions());
 
 
 
