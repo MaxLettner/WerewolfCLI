@@ -35,4 +35,13 @@ package at.htl;
         _isAlive = isAlive;
     }
 
+    @Override
+    public String toString() {
+        String s = String.format("Name: %s Health: %s IsAlive: %s", _name,  _health, _isAlive);
+        if(_isInLoveWith != null){
+            s += String.format(" IsInLoveWith: %s ", _isInLoveWith);
+        }
+        return s;
+    }
+
 }

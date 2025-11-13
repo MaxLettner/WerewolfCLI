@@ -26,9 +26,11 @@ public class Werewolf extends Player {
         if(!player._isAlive) {
             throw new TargetDeadException("Das Opfer ist tot!");
         }
-        if(player != _wanderingTrader && player != _mentor.getProt()) {}
-        player.setHealth(player.getHealth() - 1);
-        _victim = player;
+        if(player != _wanderingTrader && player != _mentor.getProt()) {
+            player.setHealth(player.getHealth() - 1);
+            _victim = player;
+        }
+
     }
 
     public Player getVictim() {

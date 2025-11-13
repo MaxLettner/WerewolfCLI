@@ -21,17 +21,22 @@ public class Main {
         sleeperChild.initializeOtherPlayers(werewolf);
         witch.initializeOtherPlayers(werewolf);
 
-        List<Player> game = new ArrayList<Player>();
 
-        game.add(mentor);
-        game.add(werewolf);
-        game.add(wanderingTrader);
-        game.add(sleeperChild);
-        game.add(witch);
+        IO.println(mentor.toString());
+        IO.println(werewolf.toString());
+        IO.println(sleeperChild.toString());
+        IO.println(wanderingTrader.toString());
+        IO.println(witch.toString());
 
-        while(!gamefinished) {
+        //mentor.protect(mentor);
+        //IO.println(mentor.getProt().toString());
+        werewolf.attack(wanderingTrader);
 
-        }
+        IO.println(mentor.toString());
+        IO.println(werewolf.toString());
+        IO.println(sleeperChild.toString());
+        IO.println(wanderingTrader.toString());
+        IO.println(witch.toString());
 
 
 
