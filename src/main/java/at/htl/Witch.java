@@ -68,6 +68,9 @@ public class Witch extends Player {
         if(!player._isAlive) {
             throw new TargetDeadException("Das Opfer ist tot!");
         }
+        if(player == _sleeperChild && _sleeperChild.getMayMutate() == true){
+            _sleeperChild.setMayMutate(false);
+        }
         player.setHealth(player.getHealth() + 1);
         _healthPotions--;
     }

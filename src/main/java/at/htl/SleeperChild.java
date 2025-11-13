@@ -27,4 +27,16 @@ public class SleeperChild extends Player {
             _mayMutate = true;
         }
     }
+    public boolean getMayMutate() {
+        return _mayMutate;
+    }
+    public void setMayMutate(boolean mayMutate) {
+        _mayMutate = mayMutate;
+    }
+    public boolean getIsMutated() {
+        return _isMutated;
+    }
+    public void setIsMutated(boolean isMutated) {
+        _isMutated = isMutated;
+    }
 }
