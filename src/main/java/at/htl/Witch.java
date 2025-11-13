@@ -1,5 +1,9 @@
 package at.htl;
 
+import at.htl.Exceptions.FriendlyFireException;
+import at.htl.Exceptions.OutOfAmmoException;
+import at.htl.Exceptions.TargetDeadException;
+
 public class Witch extends Player {
     private int _healthPotions;
     private int _damagePotions;
@@ -7,6 +11,8 @@ public class Witch extends Player {
     private int _onionPotions;
 
     private Werewolf _werewolf;
+    private WanderingTrader _wanderingTrader;
+    private Mentor _mentor;
 
     Witch(int playerCount, String name) {
         _healthPotions = 2;
@@ -17,8 +23,10 @@ public class Witch extends Player {
         super(playerCount,  name);
     }
 
-    public void initializeOtherPlayers(Werewolf werewolf) {
+    public void initializeOtherPlayers(Werewolf werewolf, WanderingTrader wanderingTrader, Mentor mentor) {
         _werewolf = werewolf;
+        _wanderingTrader = wanderingTrader;
+        _mentor = mentor;
     }
 
     public String getPotions() {
@@ -33,5 +41,21 @@ public class Witch extends Player {
         }else{
             return s;
         }
+    }
+
+    public void throwDamagePotion(Player player) {
+        if(_damagePotions < 1) {
+            throw new OutOfAmmoException("You have no more damage potions!");
+        }
+        if(_isInLoveWith == player) {
+            throw new FriendlyFireException("Das Opfer ist mit dir im Liebespaar!");
+        }
+        if(!player._isAlive) {
+            throw new TargetDeadException("Das Opfer ist tot!");
+        }
+        if(player != _wanderingTrader && player != _mentor.getProt()) {
+            player.setHealth(player.getHealth() - 1);
+        }
+        _damagePotions--;
     }
 }
