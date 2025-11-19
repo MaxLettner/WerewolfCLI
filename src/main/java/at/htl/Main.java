@@ -13,7 +13,7 @@ public class Main {
         Witch witch = new Witch(playerCount, "Sebastian");
         SleeperChild sleeperChild = new SleeperChild(playerCount, "Silas");
 
-        werewolf.initializeOtherPlayers(mentor, wanderingTrader);
+        werewolf.initializeOtherPlayers(mentor, wanderingTrader, sleeperChild);
         wanderingTrader.initializeOtherPlayers(werewolf);
         sleeperChild.initializeOtherPlayers(werewolf);
         witch.initializeOtherPlayers(werewolf, wanderingTrader, mentor, sleeperChild);

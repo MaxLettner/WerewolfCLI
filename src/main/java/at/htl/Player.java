@@ -43,10 +43,11 @@ package at.htl;
         _isGone = isGone;
     }
 
+
     @Override
     public String toString() {
         String s = String.format("Name: %s Health: %s IsAlive: %s", _name,  _health, _isAlive);
-        if(_isInLoveWith != null){
+        if(_isInLoveWith != null){                                                                      //simple toString()
             s += String.format(" IsInLoveWith: %s ", _isInLoveWith);
         }
         return s;

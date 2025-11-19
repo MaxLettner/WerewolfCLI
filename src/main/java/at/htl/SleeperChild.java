@@ -1,10 +1,10 @@
 package at.htl;
 
 public class SleeperChild extends Player {
-    private boolean _isMutated;
-    private boolean _mayMutate;
-    private Werewolf _werewolf;
-
+    private boolean _isMutated;                                         //_isMutated states whether the Kid has fully mutated and is a Werewolf
+    private boolean _mayMutate;                                         //_mayMutate states whether the Kid has been attacked this round but this value can be changed
+    private Werewolf _werewolf;                                         //by the Witch, if the _mayMutate flag is still true when the day comes then in the DayUtils.java
+                                                                        //_isMutated will be set to true
     SleeperChild(int playerCount, String name) {
         _isMutated = false;
         _mayMutate = false;

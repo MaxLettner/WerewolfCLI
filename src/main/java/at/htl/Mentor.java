@@ -16,7 +16,7 @@ public class Mentor extends Player{
         return;
     }
 
-    public void _putInLove(Player player1, Player player2) {
+    public void putInLove(Player player1, Player player2) {
         if(player1 == player2){
             throw new SamePlayerException("Player1 == Player2!");
         }
