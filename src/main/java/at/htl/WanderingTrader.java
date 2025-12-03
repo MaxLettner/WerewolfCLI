@@ -31,7 +31,9 @@ public class WanderingTrader extends Player {
     }
 
     public void sleepWith(Player player) {
-        //if (_sleptWith == _werewolf.getVictim()) {}
+        if (_sleptWith == _werewolf.getVictim()) {
+            _health--;
+        }
         if (_sleptWith == player) {
             throw new AlreadyLastTimeException("You can't sleep with the same person two times in a row!");
         }

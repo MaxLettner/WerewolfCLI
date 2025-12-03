@@ -1,6 +1,5 @@
 package at.htl;
 
-import at.htl.Exceptions.FriendlyFireException;
 import at.htl.Exceptions.TargetDeadException;
 
 public class Werewolf extends Player {
@@ -21,27 +20,21 @@ public class Werewolf extends Player {
     }
 
     public void attack(Player player) {
-        _victim = null;
-        if(_isInLoveWith == player) {
-            throw new FriendlyFireException("Das Opfer ist mit dir im Liebespaar!");
-        }
         if(!player._isAlive) {                                                          //Attacking other players
             throw new TargetDeadException("Das Opfer ist tot!");
         }
-        if(player != _wanderingTrader && player != _mentor.getProt()) {
-            player.setHealth(player.getHealth() - 1);
-            _victim = player;                                                           //_victim is just the player that got attacked, it is possible for witch and
-                                                                                        //SleeperChild to change this value
-        }                                                                               //WanderingTrader uses it too for looking whether he got damaged
-
+        if(player == _wanderingTrader){return;}
+        if(player == _mentor.getProt()){return;}
+        if(player == _sleeperChild) {                                                   //SleeperChild doesnt get damaged but it may mutate into a werewolf if not healed by the witch
+            _sleeperChild.setMayMutate(true);
+            return;
+        }
+        player.setHealth(player.getHealth() - 1);
+        _victim = player;
     }
 
     public Player getVictim() {
         return _victim;
-    }
-
-    public void clearVictim() {
-        _victim = null;
     }
 
 

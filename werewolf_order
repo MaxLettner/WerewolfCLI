@@ -1,0 +1,38 @@
+Mentor
+    ==> 1. Runde: put in
+    ==> protect
+
+Werewolf
+    ==> Greift an
+        --> victim wird gesetzt
+        --> victim wird nict gesetzt wenn
+            --> victim wandering trader ist
+            --> victim mentor.protected ist
+            --> victim schlafloses Kind ist
+                --> sleeperChild.mayMutate wird auf true gesetzt
+
+Wandering Trader
+    ==> schlaeft bei jemand
+        --> wenn target werewolf.victim ist wird er gedamaged
+    ==> kann jemanden stopfen
+        --> DayUtils muss das durchführen
+
+Witch
+    ==> sieht werewolf.victim
+    ==> kann jeden heilen der 1 oder 0 HP hat und nicht tod ist
+        --> wird SleeperChild geheilt wird sleeperChild.mayMutate auf false gestellt
+    ==> kann jeden toeten der nicht tod ist
+    ==> kann jeden verschwinden lassen der nicht tod ist
+
+SleeperChild
+    ==> wenn mayMutate true ist wird isWerewolf auf true gestellt
+        --> ist ab jetzt werwolf
+    ==> kann jemand sehen
+        --> wenn werwolf boese
+        --> sonst gut
+
+Day
+    ==> player die 0 HP haben werden gekilled
+    ==> ein player kann gevoted werden
+    ==> wenn wanderingTrader.stuffed geredet hat bekommt er schaden
+    ==> player die 0 HP haben werden gekillt

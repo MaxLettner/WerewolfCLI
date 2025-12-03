@@ -1,6 +1,5 @@
 package at.htl;
 
-import at.htl.Exceptions.FriendlyFireException;
 import at.htl.Exceptions.OutOfAmmoException;
 import at.htl.Exceptions.TargetDeadException;
 
@@ -9,6 +8,7 @@ public class Witch extends Player {
     private int _damagePotions;
     private int _gonePotions;
     private int _onionPotions;
+    private Player _gone;
 
     private Werewolf _werewolf;
     private WanderingTrader _wanderingTrader;
@@ -20,6 +20,7 @@ public class Witch extends Player {
         _damagePotions = 1;
         _gonePotions = 1;
         _onionPotions = 0;
+        _gone = null;
 
         super(playerCount,  name);
     }
@@ -48,9 +49,6 @@ public class Witch extends Player {
     public void damage(Player player) {
         if(_damagePotions < 1) {
             throw new OutOfAmmoException("You have no more damage potions!");
-        }
-        if(_isInLoveWith == player) {
-            throw new FriendlyFireException("Das Opfer ist mit dir im Liebespaar!");
         }
         if(!player._isAlive) {
             throw new TargetDeadException("Das Opfer ist tot!");

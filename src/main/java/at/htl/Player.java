@@ -13,7 +13,6 @@ package at.htl;
         _isInLoveWith = null;
         _playerCount = playerCount;
         _isAlive = true;
-        _isGone = false;
         _name = name;
 
     }
@@ -42,6 +41,8 @@ package at.htl;
     public void setIsGone(boolean isGone) {
         _isGone = isGone;
     }
+
+
 
 
     @Override

@@ -18,7 +18,6 @@ public class Main {
         sleeperChild.initializeOtherPlayers(werewolf);
         witch.initializeOtherPlayers(werewolf, wanderingTrader, mentor, sleeperChild);
 
-
         IO.println(mentor.toString());
         IO.println(werewolf.toString());
         IO.println(sleeperChild.toString());
@@ -29,7 +28,6 @@ public class Main {
         werewolf.attack(sleeperChild);
 
         IO.println(sleeperChild.toString());
-        sleeperChild.updateMutation();
         IO.println(sleeperChild.toString());
         IO.println(sleeperChild.getMayMutate());
         witch.heal(sleeperChild);

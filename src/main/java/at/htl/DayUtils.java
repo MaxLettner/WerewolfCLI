@@ -24,4 +24,8 @@ public class DayUtils {
             }
         }
     }
+
+   // public String checkIfGameIsFinished() {
+
+    //}
 }
