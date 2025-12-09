@@ -6,7 +6,6 @@ package at.htl;
     protected Player _isInLoveWith;
     protected int _playerCount;
     protected boolean _isAlive;
-    protected boolean _isGone;
 
     Player(int playerCount,  String name) {
         _health = 2;
@@ -34,12 +33,6 @@ package at.htl;
     }
     public void setIsAlive(boolean isAlive) {
         _isAlive = isAlive;
-    }
-    public boolean getIsGone() {
-        return _isGone;
-    }
-    public void setIsGone(boolean isGone) {
-        _isGone = isGone;
     }
 
 

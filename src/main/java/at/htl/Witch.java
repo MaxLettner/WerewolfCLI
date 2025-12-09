@@ -33,6 +33,7 @@ public class Witch extends Player {
     }
 
     public String getPotions() {
+        resetGone();
         String s = "";
         if(_healthPotions > 1) {s += String.format("Du hast %s Heiltränke!\n", _healthPotions);}
         if(_healthPotions == 1) {s += String.format("Du hast %s Heiltrank!\n", _healthPotions);}
@@ -44,6 +45,11 @@ public class Witch extends Player {
         }else{
             return s;
         }
+
+    }
+
+    private void resetGone() {
+        _gone = null;
     }
 
     public void damage(Player player) {
@@ -66,10 +72,18 @@ public class Witch extends Player {
         if(!player._isAlive) {
             throw new TargetDeadException("Das Opfer ist tot!");
         }
-        if(player == _sleeperChild && _sleeperChild.getMayMutate() == true){
+        if(player == _sleeperChild && _sleeperChild.getMayMutate()){
             _sleeperChild.setMayMutate(false);
         }
         player.setHealth(player.getHealth() + 1);
         _healthPotions--;
+    }
+
+    public void disappear(Player player) {
+        if(!player._isAlive) {
+            throw new TargetDeadException("Das Opfer ist tot!");
+        }else {
+            _gone = player;
+        }
     }
 }

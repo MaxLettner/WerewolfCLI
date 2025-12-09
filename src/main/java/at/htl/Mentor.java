@@ -5,6 +5,7 @@ import at.htl.Exceptions.SamePlayerException;
 
 public class Mentor extends Player{
     private Player _prot;
+    private boolean _loveIsAlive;
 
     Mentor(int playerCount, String name) {
 
@@ -13,7 +14,7 @@ public class Mentor extends Player{
     }
 
     public void initializeOtherPlayers() {
-        return;
+
     }
 
     public void putInLove(Player player1, Player player2) {
@@ -22,6 +23,7 @@ public class Mentor extends Player{
         }
         player1.setIsInLoveWith(player2);
         player2.setIsInLoveWith(player1);
+        _loveIsAlive = true;
     }
 
     public Player getProt() {
@@ -33,6 +35,14 @@ public class Mentor extends Player{
             throw new AlreadyLastTimeException("You can't protect the same player two times in a row!");
         }
         _prot = player;
+    }
+
+    public boolean getLoveIsAlive() {
+        return _loveIsAlive;
+    }
+
+    public void setLoveIsAlive(boolean loveIsAlive) {
+        _loveIsAlive = loveIsAlive;
     }
 
 
