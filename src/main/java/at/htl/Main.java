@@ -18,21 +18,35 @@ public class Main {
         sleeperChild.initializeOtherPlayers(werewolf);
         witch.initializeOtherPlayers(werewolf, wanderingTrader, mentor, sleeperChild);
 
+        DayUtils.initializePlayers(mentor, werewolf, wanderingTrader, witch, sleeperChild);
+
         IO.println(mentor.toString());
         IO.println(werewolf.toString());
-        IO.println(sleeperChild.toString());
         IO.println(wanderingTrader.toString());
         IO.println(witch.toString());
+        IO.println(sleeperChild.toString());
         IO.println();
 
-        werewolf.attack(sleeperChild);
+        mentor.putInLove(witch, sleeperChild);
 
+        werewolf.attack(sleeperChild);
+        sleeperChild.checkMutation();
+
+        mentor.setHealth(0);
+        werewolf.setHealth(0);
+        wanderingTrader.setHealth(0);
+        DayUtils.kill();
+
+        IO.println();
+        IO.println(mentor.toString());
+        IO.println(werewolf.toString());
+        IO.println(wanderingTrader.toString());
+        IO.println(witch.toString());
         IO.println(sleeperChild.toString());
-        IO.println(sleeperChild.toString());
-        IO.println(sleeperChild.getMayMutate());
-        witch.heal(sleeperChild);
-        IO.println(sleeperChild.toString());
-        IO.println(sleeperChild.getMayMutate());
+
+
+
+        IO.println(DayUtils.checkIfGameIsFinished());
 
 
     }

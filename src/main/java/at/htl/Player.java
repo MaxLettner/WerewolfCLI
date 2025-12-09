@@ -34,6 +34,7 @@ package at.htl;
     public void setIsAlive(boolean isAlive) {
         _isAlive = isAlive;
     }
+    public String getName(){return _name;}
 
 
 
@@ -42,7 +43,7 @@ package at.htl;
     public String toString() {
         String s = String.format("Name: %s Health: %s IsAlive: %s", _name,  _health, _isAlive);
         if(_isInLoveWith != null){                                                                      //simple toString()
-            s += String.format(" IsInLoveWith: %s ", _isInLoveWith);
+            s += String.format(" IsInLoveWith: %s ", _isInLoveWith.getName());
         }
         return s;
     }

@@ -10,6 +10,7 @@ public class Mentor extends Player{
     Mentor(int playerCount, String name) {
 
         _prot = null;
+        _loveIsAlive = false;
         super(playerCount, name);
     }
 

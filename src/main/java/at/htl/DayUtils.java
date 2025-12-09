@@ -41,7 +41,7 @@ public class DayUtils {
         }
     }
 
-    public String checkIfGameIsFinished() {
+    public static String checkIfGameIsFinished() {
         int good = 0;
         int bad = 0;
 
